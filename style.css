@@ -1,0 +1,134 @@
+/*
+    GENERAL CSS
+*/
+body{
+    padding:0;
+    margin:0;
+    display: grid;
+    min-height:100%;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 95vh 5vh;
+    grid-template-areas: 
+    "nav main"
+    "footer footer"
+    ;
+}
+
+.flex{
+    display:flex;
+}
+
+.flex-direction{
+    flex-direction: column ;
+}
+
+/*
+    END
+*/
+/*************************/
+/*
+    NAV
+*/
+
+nav{
+    background-color: blueviolet;
+    grid-area: nav;
+    border-right: 1px solid black;
+    justify-content: space-around;
+}
+nav i{
+    font-size: 25px;
+    align-self: center;
+}
+/*
+    END
+*/
+/*************************/
+
+/*
+    MAIN
+*/
+main{
+    background-color: coral;
+    grid-area: main;
+}
+
+main h1{
+    text-align: center;
+}
+
+main .home-section{
+    align-items: center;
+    justify-content:center;
+    width: 85%;
+    text-align: center;
+    margin: auto;   
+    border-top: 2px dotted white;
+    margin-top: 1vh;
+    padding-top: 1vh;
+}
+
+main .home-section aside{
+    width: 65vw;
+    height: 25vh;
+}
+
+main .home-section aside img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+/*
+    END
+*/
+/*************************/
+/*
+    FOOTER
+*/
+footer{
+    background-color:darkseagreen;
+    grid-area: footer;
+    justify-content: space-around;
+}
+footer a{
+    text-decoration: unset;
+    color :black;
+}
+footer li{
+    list-style: none;
+    margin-left: 2vw;
+}
+/*
+    END
+*/
+/*************************/
+/*
+    MENU ACTIVE 
+    You can use this and move it over nav entry with JavaScript
+*/
+.active{
+    color: gold;
+}
+
+/*
+    Media query
+*/
+
+@media (max-width: 600px){
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 5vh 95% 5vh;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "footer"
+        ;
+    }
+    .flex-direction{
+        flex-direction: row;
+    }
+    main .home-section{
+        flex-direction: column;
+    }
+
+}
